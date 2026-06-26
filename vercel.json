@@ -2,20 +2,7 @@
   "version": 2,
   "buildCommand": "pnpm run build",
   "installCommand": "pnpm install",
-  "env": {
-    "PORT": {
-      "default": "3000"
-    },
-    "BASE_PATH": {
-      "default": "/"
-    },
-    "NODE_ENV": {
-      "default": "production"
-    },
-    "VITE_API_BASE_URL": {
-      "default": "https://your-domain.com"
-    }
-  },
+
   "outputDirectory": "artifacts/feedora/dist",
   "functions": {
     "api/**": {
