@@ -60,19 +60,19 @@ export default function ImpactDashboard() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          <StatCard icon={<Leaf className="w-5 h-5" />} value={summary?.totalMealsSaved.toLocaleString() ?? "0"} label="Meals Saved" color="text-green-600" />
-          <StatCard icon={<Package className="w-5 h-5" />} value={summary?.totalDonations.toLocaleString() ?? "0"} label="Total Donations" color="text-blue-600" />
-          <StatCard icon={<Truck className="w-5 h-5" />} value={summary?.totalDelivered.toLocaleString() ?? "0"} label="Delivered" color="text-purple-600" />
-          <StatCard icon={<Users className="w-5 h-5" />} value={(summary?.co2AvoidedKg ?? 0).toFixed(1)} label="kg CO2 Avoided" color="text-amber-600" />
+          <StatCard icon={<Leaf className="w-5 h-5" />} value={(summary?.totalMealsSaved ?? 0).toLocaleString()} label="Meals Saved" color="text-green-600" />
+          <StatCard icon={<Package className="w-5 h-5" />} value={(summary?.totalDonations ?? 0).toLocaleString()} label="Total Donations" color="text-blue-600" />
+          <StatCard icon={<Truck className="w-5 h-5" />} value={(summary?.totalDelivered ?? 0).toLocaleString()} label="Delivered" color="text-purple-600" />
+          <StatCard icon={<Users className="w-5 h-5" />} value={((summary?.co2AvoidedKg) ?? 0).toFixed(1)} label="kg CO2 Avoided" color="text-amber-600" />
         </div>
 
         <div className="grid grid-cols-2 gap-4 mb-8">
           <div className="bg-card border border-border rounded-xl p-4">
-            <div className="text-2xl font-bold">{summary?.totalNgos ?? 0}</div>
+            <div className="text-2xl font-bold">{(summary?.totalNgos) ?? 0}</div>
             <div className="text-sm text-muted-foreground">Partner NGOs</div>
           </div>
           <div className="bg-card border border-border rounded-xl p-4">
-            <div className="text-2xl font-bold">{summary?.activePosts ?? 0}</div>
+            <div className="text-2xl font-bold">{(summary?.activePosts) ?? 0}</div>
             <div className="text-sm text-muted-foreground">Active Posts Right Now</div>
           </div>
         </div>
