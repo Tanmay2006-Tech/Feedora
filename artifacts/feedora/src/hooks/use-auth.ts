@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { User } from "@workspace/api-client-react";
 
 export function useAuth() {

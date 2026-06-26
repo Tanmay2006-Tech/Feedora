@@ -1,12 +1,17 @@
-import express, { Request, Response } from "express";
-import pinoHttp from "pino-http";
+import { Toaster } from "sonner";
+import { ThemeProvider } from "next-themes";
+import HomePage from "./pages/home";
+import "./index.css";
 
-const app = express();
+function App() {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+      <div className="min-h-screen bg-background">
+        <HomePage />
+      </div>
+      <Toaster />
+    </ThemeProvider>
+  );
+}
 
-app.use(pinoHttp());
-
-app.get("/", (req: Request, res: Response) => {
-  res.send("Server is running");
-});
-
-export default app;
+export default App;
