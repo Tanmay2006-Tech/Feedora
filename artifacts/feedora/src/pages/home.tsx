@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+
 import {
   useGetImpactSummary,
   useGetRecentActivity,
@@ -48,16 +48,16 @@ export default function Home() {
               Feedora connects restaurants and donors with nearby NGOs and volunteers in real time — like a delivery app, but for donations.
             </p>
             <div className="flex items-center justify-center gap-3 pt-2">
-              <Link href="/register">
+              <a href="/register" className="inline-block">
                 <Button size="lg" className="rounded-full text-base h-12 px-7 shadow-lg shadow-primary/25">
                   Join the Network <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
-              </Link>
-              <Link href="/impact">
+              </a>
+              <a href="/impact" className="inline-block">
                 <Button size="lg" variant="outline" className="rounded-full text-base h-12 px-7">
                   See Impact
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -102,9 +102,9 @@ export default function Home() {
             <div className="max-w-5xl mx-auto pt-12">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-bold">Food Available Now</h2>
-                <Link href="/ngo" className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
+                <a href="/ngo" className="text-sm text-primary hover:underline font-medium flex items-center gap-1">
                   View All <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
+                </a>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 {activePosts.map((post) => (
@@ -148,11 +148,11 @@ export default function Home() {
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h2 className="text-3xl font-bold">Ready to save food?</h2>
             <p className="text-primary-foreground/80">Join thousands of donors, NGOs, and volunteers making a difference every day.</p>
-            <Link href="/register">
+            <a href="/register" className="inline-block">
               <Button size="lg" variant="secondary" className="rounded-full h-12 px-8 mt-2">
                 Get Started for Free
               </Button>
-            </Link>
+            </a>
           </div>
         </section>
       </main>
