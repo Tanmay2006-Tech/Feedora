@@ -28,14 +28,30 @@ function App() {
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <Router>
           <div className="min-h-screen bg-background">
-            <Route path="/" component={HomePage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/register" component={RegisterPage} />
-            <Route path="/donor" component={DonorPage} />
-            <Route path="/ngo" component={NGOPage} />
-            <Route path="/volunteer" component={VolunteerPage} />
-            <Route path="/impact" component={ImpactPage} />
-            <Route component={NotFoundPage} />
+            <Route path="/">
+              <HomePage />
+            </Route>
+            <Route path="/login">
+              <LoginPage />
+            </Route>
+            <Route path="/register">
+              <RegisterPage />
+            </Route>
+            <Route path="/donor">
+              <DonorPage />
+            </Route>
+            <Route path="/ngo">
+              <NGOPage />
+            </Route>
+            <Route path="/volunteer">
+              <VolunteerPage />
+            </Route>
+            <Route path="/impact">
+              <ImpactPage />
+            </Route>
+            <Route>
+              <NotFoundPage />
+            </Route>
           </div>
         </Router>
         <Toaster position="top-right" />

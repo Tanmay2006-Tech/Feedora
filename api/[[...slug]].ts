@@ -119,6 +119,8 @@ export default async function handler(
     if (path === "/api/impact/summary" && req.method === "GET") {
       return res.status(200).json({
         totalMealsSaved: 15234,
+        totalDonations: 342,
+        totalDelivered: 13420,
         co2AvoidedKg: 4523.5,
         totalNgos: 42,
         activePosts: 23,
@@ -183,8 +185,13 @@ export default async function handler(
 
     // NGOs
     if (path === "/api/ngos" && req.method === "GET") {
+      const ngos = [
+        { id: "ngo1", organizationName: "Food for All NGO", totalClaimsCompleted: 142, reliabilityScore: 98.5 },
+        { id: "ngo2", organizationName: "Community Kitchen", totalClaimsCompleted: 89, reliabilityScore: 96.2 },
+        { id: "ngo3", organizationName: "Hunger Relief Initiative", totalClaimsCompleted: 67, reliabilityScore: 94.8 },
+      ];
       return res.status(200).json({
-        ngos: Array.from(mockUsers.values()).filter(u => u.role === "ngo"),
+        ngos,
         total: 42,
       });
     }
@@ -199,9 +206,14 @@ export default async function handler(
 
     // Volunteers
     if (path === "/api/volunteers" && req.method === "GET") {
+      const volunteers = [
+        { id: "vol1", name: "Sarah Volunteer", totalDeliveries: 45, rating: 4.9 },
+        { id: "vol2", name: "Mike Johnson", totalDeliveries: 38, rating: 4.8 },
+        { id: "vol3", name: "Emma Davis", totalDeliveries: 32, rating: 4.95 },
+      ];
       return res.status(200).json({
-        volunteers: Array.from(mockUsers.values()).filter(u => u.role === "volunteer"),
-        total: 200,
+        volunteers,
+        total: 156,
       });
     }
 
@@ -265,11 +277,11 @@ export default async function handler(
     if (path === "/api/impact/by-food-type" && req.method === "GET") {
       return res.status(200).json({
         breakdown: [
-          { foodType: "cooked_meal", mealsCount: 5230, co2Avoided: 1500 },
-          { foodType: "bakery", mealsCount: 3400, co2Avoided: 980 },
-          { foodType: "dairy", mealsCount: 2100, co2Avoided: 650 },
-          { foodType: "raw_produce", mealsCount: 2504, co2Avoided: 800 },
-          { foodType: "packaged_food", mealsCount: 1500, co2Avoided: 450 },
+          { foodType: "cooked_meal", count: 5230, servings: 15230, co2Avoided: 1500 },
+          { foodType: "bakery", count: 3400, servings: 5100, co2Avoided: 980 },
+          { foodType: "dairy", count: 2100, servings: 3500, co2Avoided: 650 },
+          { foodType: "raw_produce", count: 2504, servings: 4200, co2Avoided: 800 },
+          { foodType: "packaged_food", count: 1500, servings: 2500, co2Avoided: 450 },
         ],
       });
     }
