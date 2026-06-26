@@ -1,26 +1,8 @@
 {
   "version": 2,
   "buildCommand": "pnpm run build",
-  "installCommand": "pnpm install --frozen-lockfile",
-  "env": {
-    "PORT": {
-      "default": "3000"
-    },
-    "BASE_PATH": {
-      "default": "/"
-    },
-    "NODE_ENV": {
-      "default": "production"
-    }
-  },
+  "installCommand": "pnpm install",
   "outputDirectory": "artifacts/feedora/dist",
-  "functions": {
-    "api/**": {
-      "runtime": "nodejs20.x",
-      "memory": 1024,
-      "maxDuration": 60
-    }
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
